@@ -28,22 +28,22 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          <Link to={process.env.PUBLIC_URL+'/'} className='navbar-logo' onClick={closeMobileMenu}>
             Data Science for All
-            
+
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <Link to={process.env.PUBLIC_URL+'/'} className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
             <li className='nav-item'>
               <Link
-                to='/Experience1'
+                to={process.env.PUBLIC_URL+'/Experience1'}
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -52,7 +52,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/Experience2'
+                to={process.env.PUBLIC_URL+'/Experience2'}
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -62,7 +62,7 @@ function Navbar() {
 
             <li>
               <Link
-                to='/sign-up'
+                to={process.env.PUBLIC_URL+'/'}
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >

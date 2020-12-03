@@ -63,7 +63,7 @@ export default function Products() {
             <ul className='cards__items'>
               <CardItem
                 label="Try me!"
-                src ='images/tm2.gif'
+                src ={process.env.PUBLIC_URL+'/images/tm2.gif'}
                 text="Try Google's Teachable Machine!"
                 path='/Experience2'
                 onClick={myWizard.open}

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Navbar from './components/Navbar';
-import {BrowserRouter, Router, Switch, Route} from
+import {BrowserRouter as Router, Switch, Route} from
 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home'
@@ -13,11 +13,9 @@ function App() {
   <Router>
     <Navbar />
       <Switch>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Route path = '/' exact component = {Home}/>
-          <Route path = '/Experience1' component = {Experience1}/>
-          <Route path = '/Experience2' component = {Experience2}/>
-        </BrowserRouter>
+          <Route path = {process.env.PUBLIC_URL+'/'} exact component = {Home}/>
+          <Route path = {process.env.PUBLIC_URL+'/Experience1'} component = {Experience1}/>
+          <Route path = {process.env.PUBLIC_URL+'/Experience2'} component = {Experience2}/>
       </Switch>
     </Router>
     </>
