@@ -21,12 +21,12 @@ function Cards() {
               src={process.env.PUBLIC_URL+'/images/placeholder2.gif'}
               text='Information about Experience 1'
               label='Fun'
-              path='/Experience1'
+              path={process.env.PUBLIC_URL+'/Experience1'}
             />
             <CardItem
               src={process.env.PUBLIC_URL+'/images/tm2.gif'}
               text='Strike a pose, and the computer will learn from you!'
-              path='/Experience2'
+              path={process.env.PUBLIC_URL+'/Experience2'}
               label='More Fun'
 
 
