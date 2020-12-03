@@ -18,13 +18,13 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='images/placeholder2.gif'
+              src='./images/placeholder2.gif'
               text='Information about Experience 1'
               label='Fun'
               path='/Experience1'
             />
             <CardItem
-              src='images/tm2.gif'
+              src='./images/tm2.gif'
               text='Strike a pose, and the computer will learn from you!'
               path='/Experience2'
               label='More Fun'
