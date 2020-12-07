@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import '../../App.css';
 import './Experience2.css';
@@ -7,6 +7,7 @@ import { Button } from '../Button';
 import '../Cards.css';
 import CardItem from '../CardItem';
 import Footer2 from '../Footer';
+import { Link } from 'react-router-dom';
 
 
 
@@ -54,6 +55,19 @@ export default function Products() {
 
 
   function Cards() {
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
+  
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+  
+    const showButton = () => {
+      if (window.innerWidth <= 960) {
+        setButton(false);
+      } else {
+        setButton(true);
+      }
+    };
     return (
       <>
       <div className='cards'>
@@ -63,19 +77,23 @@ export default function Products() {
             <ul className='cards__items'>
               <CardItem
                 label="Try me!"
-                src ={process.env.PUBLIC_URL+'/images/tm2.gif'}
+                src ='images/tm2.gif'
                 text="Try Google's Teachable Machine!"
                 path='/Experience2'
                 onClick={myWizard.open}
               />
             </ul>
           </div>
-         <p>This type of experience is called "Machine Learning." If you want to learn more about machine learning, here are some other resources you can go explore:</p>
-          <ul>
-            <li><a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a></li>
+         <p>This type of experience is called "Machine Learning." If you want to learn more about machine learning, here are some other resources you can go explore: </p> <br/>
+          <ul> 
+            <li>  {button && <Button buttonStyle='btn--outline'> <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>  </Button>} </li> <br/>
+            <li> {button && <Button buttonStyle='btn--outline'> AI Experiments </Button>} </li> <br/>
+            <li> {button && <Button buttonStyle='btn--outline'>Draw with the Help of AI</Button>} </li> <br/>
+            <li> {button && <Button buttonStyle='btn--outline'>Play Pictionary with AI</Button>} </li>
+            {/* <li><a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a></li>
             <li><a href="https://experiments.withgoogle.com/collection/ai">AI Experiments</a></li>
             <li><a href="http://nvidia-research-mingyuliu.com/gaugan/">Draw with the Help of AI</a></li>
-            <li><a href="https://quickdraw.withgoogle.com/">Play Pictionary with AI</a></li>
+            <li><a href="https://quickdraw.withgoogle.com/">Play Pictionary with AI</a></li> */}
           </ul>
         </div>
 
